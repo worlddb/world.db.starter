@@ -16,3 +16,13 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+
+# ignore world.db in root for testing
+
+world.db
+
+
+# ignore komodo project file
+
+*.kpf
