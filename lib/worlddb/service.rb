@@ -9,7 +9,7 @@
 # 3rd party libs/gems
 
 require 'sinatra/base'
-
+require 'csv'
 
 # our own code
 
