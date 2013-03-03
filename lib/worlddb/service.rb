@@ -6,10 +6,13 @@
 #   run WorldDb::Service::Server
 
 
+# stdlibs
+
+require 'csv'
+
 # 3rd party libs/gems
 
 require 'sinatra/base'
-require 'csv'
 
 # our own code
 
