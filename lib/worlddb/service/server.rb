@@ -173,6 +173,7 @@ end
       headers 'Content-Type' => 'text/plain; charset=utf-8'
       csv_for_data( data )
     elsif format == 'html' || format == 'htm'
+      headers 'Content-Type' => 'text/html; charset=utf-8'
       table_for_data( data )
     else
       json_or_jsonp( data )
