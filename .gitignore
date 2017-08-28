@@ -1,28 +1,14 @@
-*.gem
-*.rbc
-.bundle
-.config
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
+###############
+# Ruby stuff
+#  -- for now ignore Gemfile.lock
 
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
+Gemfile.lock
 
 
-# ignore world.db in root for testing
+################
+# SQLite dbs
 
 world.db
-
-
-# ignore komodo project file
-
-*.kpf
+*.db
+*.sqlite
+*.sqlite3

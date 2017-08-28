@@ -1,26 +1,53 @@
-# world.db.api
+# world.db.starter - Build Your Own HTTP JSON API
 
-world.db web service - open world database web service sample // world.db HTTP API sample (JSON / CSV / HTML)
+The worlddb web service starter sample lets you build your own HTTP JSON API
+using the
+[`world.db`](https://github.com/openmundi).  Example:
+
+```ruby
+class StarterApp < Webservice::Base
+
+#####################
+# Models
+
+include WorldDb::Models   # e.g. Continent, Country, State, City, etc.
 
 
-* home  :: [github.com/geraldb/world.db.api](https://github.com/geraldb/world.db.api)
-* bugs  :: [github.com/geraldb/world.db.api/issues](https://github.com/geraldb/world.db.api/issues)
-* gem   :: [rubygems.org/gems/world-service](https://rubygems.org/gems/worlddb-service)
-* rdoc  :: [rubydoc.info/gems/world-service](http://rubydoc.info/gems/worlddb-service)
-* forum :: [groups.google.com/group/opensport](https://groups.google.com/group/opensport)
+##############################################
+# Controllers / Routing / Request Handlers
+
+ ...
+end # class StarterApp
+```
+
+(Source: [`app.rb`](app.rb))
 
 
-## Demo
 
-Try the `world.db` Web Service demo running
-on Heroku [`worlddb.herokuapp.com/api`](http://worlddb.herokuapp.com/api).
+## Getting Started
+
+Step 1: Install all libraries (Ruby gems) using bundler. Type:
+
+    $ bundle install
+
+Step 2: Copy an SQLite database e.g. `world.db` into your folder.
+
+Step 3: Startup the web service (HTTP JSON API). Type:
+
+    $ ruby ./server.rb
+
+That's it. Open your web browser and try some services
+running on your machine on port 9292 (e.g. `localhost:9292`).
+
 
 
 ## License
 
-The `world.db.api` scripts are dedicated to the public domain.
+The `world.db.starter` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
 ## Questions? Comments?
 
-Send them along to the [Open Sports Database & Friends Forum/Mailing List](http://groups.google.com/group/opensport). Thanks!
+Send them along to the
+[Open World Database (world.db) and Friends Forum/Mailing List](http://groups.google.com/group/openmundi).
+Thanks!
