@@ -1,18 +1,26 @@
+# encoding: utf-8
 
+require 'bundler'
+Bundler.setup    ## will setup $LOAD_PATH to get locked down gem version (see Gemfile.lock)
 
-# ruby stdlibs
+require 'pp'     ## fyi: pp is pretty printer
 
-require 'pp'
-
-# 3rd party libs/gems
-
-require 'worlddb'
-## require 'active_record'
+puts '$LOAD_PATH:'
+pp $LOAD_PATH
 
 
 ENV['RACK_ENV'] ||= 'development'
 
 puts "ENV['RACK_ENV'] = #{ENV['RACK_ENV']}"
+
+
+# 3rd party libs/gems
+
+require 'webservice'    ## note: webservice will pull in web server machinery (e.g. rack)
+
+require 'worlddb/models'   ## note: beerdb will pull in active record
+
+
 
 DB_CONFIG = {
   adapter:  'sqlite3',
@@ -23,12 +31,8 @@ puts "DB_CONFIG:"
 pp DB_CONFIG
 ActiveRecord::Base.establish_connection( DB_CONFIG )
 
-# ActiveRecord::Base.logger = Logger.new( STDOUT )
+## for debugging - disable for production use
+ActiveRecord::Base.logger = Logger.new( STDOUT )
 
 
-
-## add lib to load path
-
-$LOAD_PATH << "./lib"
-
-require './lib/worlddb/service.rb'
+require './app'
