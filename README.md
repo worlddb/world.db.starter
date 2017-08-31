@@ -49,8 +49,39 @@ Step 3: Startup the web service (HTTP JSON API). Type:
     $ ruby ./server.rb
 
 That's it. Open your web browser and try some services
-running on your machine on port 9292 (e.g. `localhost:9292`).
+running on your machine on port 9292 (e.g. `localhost:9292`). Example:
 
+
+List all the world countries (in JSON - the default format):
+
+- `http://localhost:9292/countries`
+
+List all the world countries (in CSV):
+
+- `http://localhost:9292/countries.csv`
+
+List all the world countries (in HTML w/ simple table):
+
+- `http://localhost:9292/countries.html`
+
+List all cities (in JSON):
+
+- `http://localhost:9292/cities`
+
+List all cities (in CSV):
+
+- `http://localhost:9292/cities.csv`
+
+List all countries tagged with `north_america` (in JSON):
+
+- `http://localhost:9292/tag/north_america`
+
+List all countries tagged with `north_america` (in CSV):
+
+- `http://localhost:9292/tag/north_america.csv`
+
+
+And so on. Now change the [`app.rb`](app.rb) script to fit your needs. Be bold. Enjoy.
 
 
 ## License
