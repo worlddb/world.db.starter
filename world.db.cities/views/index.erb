@@ -1,0 +1,51 @@
+
+<h3><%= cities_count %> Cities - <%= title %></h3>
+
+<table>
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+  </tr>
+
+  <% cities.each do |city| %>
+    <tr>
+     <td style='text-align: right;'>
+        <% if city.pop.present? %>
+          <%= fmt_number( city.pop ) %>
+        <% else %>
+          <span class='city-pop-x'>?</span>
+        <% end %>
+     </td>
+     <td style='white-space: nowrap;'>
+        <span class='city-title'>
+          &nbsp; <%= city.title %>
+        </span>
+        <span class='city-info'>
+        <% if city.country %>
+          <% if city.region %>
+            , <%= link_to_region( city.region ) %> ›
+          <% end %>
+          <%= link_to_country( city.country ) %>
+          <% if city.country.continent %>
+            › <%= link_to_continent( city.country.continent ) %>
+          <% end %>
+        <% end %>
+        </span>
+       <span class='city-key'>
+         &nbsp; &nbsp;
+          #<%= city.key %>
+       </span>
+
+     </td>
+    </tr>
+  <% end %><!-- each city -->
+</table>
+
+<p>
+</p>
+
+<div>
+<%= nav %>
+</div>
+

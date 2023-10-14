@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Cities - world.db.cities</title>
+  <link href="<%= url('/style.css') %>" rel='stylesheet'>
+</head>
+<body>
+
+<div>
+  <a href='/'>The World's Greatest Cities</a>  - 
+  <% Continent.order(:id).each_with_index do |cont,i| %>
+     <%= link_to_continent( cont ) %>
+  <% end %>
+</div>
+
+<%= yield %>
+
+<%= erb :'shared/_version' %>
+
+</body>
+</html>
